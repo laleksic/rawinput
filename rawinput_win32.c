@@ -1,5 +1,7 @@
 #include "rawinput.h"
 
+#include <stdbool.h>
+
 #undef UNICODE
 #include <windows.h>
 typedef UINT u32;

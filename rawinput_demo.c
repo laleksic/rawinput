@@ -1,5 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 #include "rawinput.h"
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 #pragma GCC diagnostic ignored "-Wint-to-pointer-cast"
 #pragma GCC diagnostic ignored "-Wpointer-to-int-cast"
@@ -80,7 +85,7 @@ int main (int argc, char **argv) {
     wc.lpszClassName = "sample_class";
     RegisterClass(&wc);
 
-    HWND hwnd = CreateWindow("sample_class", "sample", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 0, 0, 0, 0, HWND_DESKTOP, NULL, instance, NULL);
+    HWND hwnd = CreateWindow("sample_class", "sample", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 0, 0, 640, 480, HWND_DESKTOP, NULL, instance, NULL);
     #endif
 
     puts("Entering event loop.");
